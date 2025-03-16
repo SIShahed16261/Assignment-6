@@ -1,3 +1,4 @@
+// get started button check
 document.getElementById("get-started").addEventListener("click", function (event) {
     event.preventDefault();
         const name = document.getElementById("nameInput").value;
@@ -12,4 +13,9 @@ document.getElementById("get-started").addEventListener("click", function (event
             return;
         }
 
+});
+
+// FAQ button movement
+document.getElementById("faq-btn").addEventListener("click", () => {
+    document.getElementById("faq-section").scrollIntoView({ behavior: "smooth" });
 });
