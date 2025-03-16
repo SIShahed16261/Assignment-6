@@ -20,7 +20,11 @@ function displayButtons(buttons) {
         button.innerHTML = `<img src="assets/fa-book-open.png" alt=""> Learn - ${x.level_no}`;
 
         // Add event listener to fetch details when clicked
-        button.addEventListener('click', () => loadButtonDetails(x.level_no));
+        button.addEventListener('click', () => 
+            {
+                loadButtonDetails(x.level_no);
+            document.getElementById("defaultMessageDiv ").style.display="none";
+            });
 
         btndiv.appendChild(button);
         buttonContainer.appendChild(btndiv);
@@ -42,8 +46,10 @@ function displayButtonDetails(details) {
     // for having no data 
 
     if (details.length === 0) {
-        // If no data is available, show a message
-        btnDetails.innerHTML = `
+        const divn = document.getElementById("divn");
+      
+        divn.innerHTML = `
+        
             <div class="flex flex-col justify-center items-center mt-8 mx-auto p-12 bg-slate-200 rounded-2xl">
                 <img class="mb-4 w-16" src="assets/alert-error.png" alt="">
                 <p class="text-sm text-gray-500">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
@@ -55,6 +61,7 @@ function displayButtonDetails(details) {
     }
 // for having data
     for (let x of details) {
+       
         const detailsDiv = document.createElement("div");
         detailsDiv.classList.add("border-white", "bg-yellow-50", "text-center", "p-6");
 
@@ -74,3 +81,4 @@ function displayButtonDetails(details) {
 
 // Load buttons on page load
 loadbuttons();
+
