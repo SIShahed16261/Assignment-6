@@ -19,3 +19,7 @@ document.getElementById("get-started").addEventListener("click", function (event
 document.getElementById("faq-btn").addEventListener("click", () => {
     document.getElementById("faq-section").scrollIntoView({ behavior: "smooth" });
 });
+
+document.getElementById("learn-btn").addEventListener('click',()=>{
+    document.getElementById("vocabulary").scrollIntoView({behavior : "smooth"});
+})
