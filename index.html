@@ -29,7 +29,8 @@
                 <img src="assets/fa-book-open.png" alt="">
                 Learn
             </buttton>
-            <buttton id="logout-btn" class="btn btn-primary bg-white text-[#422AD5]  hover:bg-[#422AD5] hover:text-white">
+            <buttton id="logout-btn"
+                class="btn btn-primary bg-white text-[#422AD5]  hover:bg-[#422AD5] hover:text-white">
                 <img src="assets/fa-arrow-right-from-bracket.png" alt="">
                 Log out
             </buttton>
@@ -90,35 +91,45 @@
 
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
-            <div class="collapse-title font-semibold">How do I create an account?</div>
-            <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
-                registration process.</div>
-        </div> <br>
-        <div class="collapse collapse-plus bg-base-100 border border-base-300">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-            <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the
-                instructions
-                sent to your email.</div>
-        </div> <br>
-        <div class="collapse collapse-plus bg-base-100 border border-base-300">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">How do I update my profile information?</div>
-            <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.
+            <div class="collapse-title font-semibold">1. What is the difference between var, let, and const ?
+            </div>
+            <div class="collapse-content text-sm">
+                var declares variables with function scope and can be re-assigned, let declares block-scoped variables
+                that can be re-assigned, and const declares block-scoped variables that cannot be re-assigned.
             </div>
         </div> <br>
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">How do I update my profile information?</div>
-            <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.
+            <div class="collapse-title font-semibold">2. What is the difference between map,forEach and filter?</div>
+            <div class="collapse-content text-sm">map() creates a new array with the results of calling a provided
+                function on every element, forEach() executes a provided function for each array element but returns
+                undefined, and filter() creates a new array with elements that pass a test defined by a function.
+
             </div>
         </div> <br>
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">How do I update my profile information?</div>
-            <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.
+            <div class="collapse-title font-semibold">3. Explain arrow functions and how they are different from regular
+                functions?</div>
+            <div class="collapse-content text-sm">Arrow functions are concise functions that do not have their own this
+                context, instead inheriting it from the surrounding context, whereas regular functions have their own
+                this.
             </div>
-        </div>
+        </div> <br>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">4. How javascript promises work?</div>
+            <div class="collapse-content text-sm">JavaScript Promises represent the eventual completion (or failure) of
+                an asynchronous operation and allow chaining of .then() for success and .catch() for errors.
+            </div>
+        </div> <br>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">5. How closures work in javascript?</div>
+            <div class="collapse-content text-sm">Closures are functions that remember the lexical scope in which they
+                were created, allowing them to access variables from that scope even after the outer function has
+                finished executing.
+            </div>
     </section>
 
 
@@ -144,10 +155,8 @@
     </footer>
     >
 
-     <!-- Open the modal using ID.showModal() method 
-     <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-
-     <dialog id="my_modal_1" class="modal">
+    <!-- dialogue box -->
+    <dialog id="my_modal_1" class="modal">
         <div class="modal-box">
 
             <h3 class="text-2xl font-bold">Eager (<span><i class="fa-solid fa-microphone"></i></span> : ইগার)</h3>
@@ -156,28 +165,27 @@
             <p class="mt-5 text-sm font-bold">Example</p>
             <p class="mt-2 text-sm font-normal">The kids were eager to open their gifts.</p>
             <p class="mt-5 text-sm font-bold">সমার্থক শব্দ গুলো</p>
-            <button class="btn mt-2 mr-2">Enthusiastic</button><button class="btn mt-2 mr-2">exited</button><button class="btn mt-2">keen</button>
+            <button class="btn mt-2 mr-2">Enthusiastic</button><button class="btn mt-2 mr-2">exited</button><button
+                class="btn mt-2">keen</button>
             <br>
             <p class="mt-8 mb-8 text-center font-bold text-lg">Press ESC or Close button to close the modal</p>
 
             <div class="modal-action">
                 <form method="dialog">
-                    
+
                     <button class="btn btn-primary">Close</button><br>
                 </form>
             </div>
 
         </div>
-    </dialog> 
-<div id="dialog">
+    </dialog>
+    <div id="dialog">
 
-</div>
-     <button style="display: none;" class="detbtn"><i class="fa-solid fa-circle-info"></i></button> 
-    
+    </div>
+    <button style="display: none;" class="detbtn"><i class="fa-solid fa-circle-info"></i></button>
+
     <script src="getStartedButton.js"></script>
     <script src="fetchLessonBtn.js"></script>
 </body>
 
-</html> 
-
-
+</html>
