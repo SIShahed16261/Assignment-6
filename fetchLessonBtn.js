@@ -53,23 +53,33 @@ function displayButtonDetails(details) {
     details.forEach(x => {
         const detailsDiv = document.createElement("div");
         detailsDiv.classList.add("border-white", "bg-yellow-50", "text-center", "p-6");
+
+        // Ensure meaning is not null or undefined
+        const meaning = x.meaning ? x.meaning : "Can't find";
+        const pronunciation = x.pronunciation ? x.pronunciation : "N/A";
+
         detailsDiv.innerHTML = `
             <p class="font-bold text-2xl mb-2">${x.word}</p>
             <p class="font-semibold text-xs mb-2">Meaning / Pronunciation</p>
-            <p class="font-semibold text-2xl mb-8">"${x.meaning} / ${x.pronunciation}"</p>
+            <p class="font-semibold text-2xl mb-8">"${meaning} / ${pronunciation}"</p>
             <div class="flex justify-between">
                 <button class="detbtn" data-id="${x.id}"><i class="fa-solid fa-circle-info"></i></button>
                 <i class="fa-solid fa-volume-high"></i>
             </div>
         `;
+
         btnDetails.appendChild(detailsDiv);
     });
 
+    // Fix: Remove existing event listeners and add new ones
     document.querySelectorAll(".detbtn").forEach(button => {
-        button.addEventListener("click", function () {
-            loadModalContent(this.dataset.id);
-        });
+        button.removeEventListener("click", handleDetailButtonClick);
+        button.addEventListener("click", handleDetailButtonClick);
     });
+}
+
+function handleDetailButtonClick(event) {
+    loadModalContent(event.currentTarget.dataset.id);
 }
 
 function loadModalContent(id) {
@@ -81,11 +91,13 @@ function loadModalContent(id) {
 
 function displayModalContent(data) {
     const modal = document.getElementById("my_modal_1");
+    const meaning = data.meaning ? data.meaning : "Can't find";
+
     modal.innerHTML = `
         <div class="modal-box">
             <h3 class="text-2xl font-bold">${data.word} (<span><i class="fa-solid fa-microphone"></i></span> : ${data.pronunciation})</h3>
             <p class="mt-5 text-sm font-bold">Meaning</p>
-            <p class="mt-2 text-sm font-bold">${data.meaning}</p>
+            <p class="mt-2 text-sm font-bold">${meaning}</p>
             <p class="mt-5 text-sm font-bold">Example</p>
             <p class="mt-2 text-sm font-normal">${data.sentence}</p>
             <p class="mt-5 text-sm font-bold">সমার্থক শব্দ গুলো</p>
