@@ -1,4 +1,3 @@
-
 function loadbuttons() {
     fetch('https://openapi.programming-hero.com/api/levels/all')
         .then(response => response.json())
@@ -17,14 +16,14 @@ function displayButtons(buttons) {
         const button = document.createElement('button');
         button.id = `lesson-${x.level_no}`;
         button.classList.add('btn', 'btn-primary', 'bg-white', 'text-[#422AD5]', 'hover:bg-[#422AD5]', 'hover:text-white');
-        button.innerHTML = `<img src="assets/fa-book-open.png" alt=""> Learn - ${x.level_no}`;
+        button.innerHTML = `
+            <img src="assets/fa-book-open.png" alt=""> Learn - ${x.level_no}`;
 
         // Add event listener to fetch details when clicked
-        button.addEventListener('click', () => 
-            {
-                loadButtonDetails(x.level_no);
-            document.getElementById("defaultMessageDiv ").style.display="none";
-            });
+        button.addEventListener('click', () => {
+            loadButtonDetails(x.level_no);
+            document.getElementById("defaultMessageDiv").style.display = "none";
+        });
 
         btndiv.appendChild(button);
         buttonContainer.appendChild(btndiv);
@@ -44,24 +43,20 @@ function displayButtonDetails(details) {
     btnDetails.innerHTML = ''; // Clear previous details
 
     // for having no data 
-
     if (details.length === 0) {
         const divn = document.getElementById("divn");
-      
         divn.innerHTML = `
-        
             <div class="flex flex-col justify-center items-center mt-8 mx-auto p-12 bg-slate-200 rounded-2xl">
                 <img class="mb-4 w-16" src="assets/alert-error.png" alt="">
                 <p class="text-sm text-gray-500">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                 <p class="text-3xl font-medium">নেক্সট Lesson এ যান</p>
             </div>
-
         `;
         return;
     }
-// for having data
+
+    // for having data
     for (let x of details) {
-       
         const detailsDiv = document.createElement("div");
         detailsDiv.classList.add("border-white", "bg-yellow-50", "text-center", "p-6");
 
@@ -70,15 +65,21 @@ function displayButtonDetails(details) {
             <p class="font-semibold text-xs mb-2">Meaning /Pronunciation</p>
             <p class="font-semibold text-2xl mb-8">"${x.meaning} / ${x.pronounciation}"</p>
             <div class="flex justify-between">
-                <i class="fa-solid fa-circle-info"></i>
+                <button class="detbtn"><i class="fa-solid fa-circle-info"></i></button>
                 <i class="fa-solid fa-volume-high"></i>
             </div>
         `;
 
         btnDetails.appendChild(detailsDiv);
     }
+
+    // Attach event listeners to all dynamically created buttons
+    document.querySelectorAll(".detbtn").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("my_modal_1").showModal();
+        });
+    });
 }
 
 // Load buttons on page load
 loadbuttons();
-
