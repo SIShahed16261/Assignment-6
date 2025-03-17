@@ -1,4 +1,6 @@
 // get started button check
+// document.getElementById("nav").style.display="block";
+
 document.getElementById("get-started").addEventListener("click", function (event) {
     event.preventDefault();
         const name = document.getElementById("nameInput").value;
