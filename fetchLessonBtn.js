@@ -56,7 +56,7 @@ function displayButtonDetails(details) {
         detailsDiv.innerHTML = `
             <p class="font-bold text-2xl mb-2">${x.word}</p>
             <p class="font-semibold text-xs mb-2">Meaning / Pronunciation</p>
-            <p class="font-semibold text-2xl mb-8">"${x.meaning} / ${x.pronounciation}"</p>
+            <p class="font-semibold text-2xl mb-8">"${x.meaning} / ${x.pronunciation}"</p>
             <div class="flex justify-between">
                 <button class="detbtn" data-id="${x.id}"><i class="fa-solid fa-circle-info"></i></button>
                 <i class="fa-solid fa-volume-high"></i>
@@ -83,11 +83,11 @@ function displayModalContent(data) {
     const modal = document.getElementById("my_modal_1");
     modal.innerHTML = `
         <div class="modal-box">
-            <h3 class="text-2xl font-bold">${data.word} (<span><i class="fa-solid fa-microphone"></i></span> : ${data.pronounciation})</h3>
+            <h3 class="text-2xl font-bold">${data.word} (<span><i class="fa-solid fa-microphone"></i></span> : ${data.pronunciation})</h3>
             <p class="mt-5 text-sm font-bold">Meaning</p>
             <p class="mt-2 text-sm font-bold">${data.meaning}</p>
             <p class="mt-5 text-sm font-bold">Example</p>
-            <p class="mt-2 text-sm font-normal">${data.example}</p>
+            <p class="mt-2 text-sm font-normal">${data.sentence}</p>
             <p class="mt-5 text-sm font-bold">সমার্থক শব্দ গুলো</p>
             <div class="mt-2">${data.synonyms.map(word => `<button class="btn mt-2 mr-2">${word}</button>`).join('')}</div>
             <p class="mt-8 mb-8 text-center font-bold text-lg">Press ESC or Close button to close the modal</p>
