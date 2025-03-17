@@ -18,6 +18,15 @@ function displayButtons(buttons) {
         button.innerHTML = `<img src="assets/fa-book-open.png" alt=""> Learn - ${x.level_no}`;
 
         button.addEventListener('click', () => {
+            document.querySelectorAll('#lesson-btn button').forEach(btn => {
+                btn.classList.remove('btn-primary', 'bg-[#422AD5]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#422AD5]'); // Reset to default
+            });
+        
+            // Add active styles to the clicked button
+            button.classList.remove('bg-white', 'text-[#422AD5]');
+            button.classList.add('bg-[#422AD5]', 'text-white'); 
+
             loadButtonDetails(x.level_no);
             document.getElementById("defaultMessageDiv").style.display = "none";
             document.getElementById("divn").innerHTML = "";
