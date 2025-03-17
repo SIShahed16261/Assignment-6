@@ -22,7 +22,19 @@ function displayButtons(buttons) {
         // Add event listener to fetch details when clicked
         button.addEventListener('click', () => {
             loadButtonDetails(x.level_no);
-            document.getElementById("defaultMessageDiv").style.display = "none";
+            // document.getElementById("defaultMessageDiv").style.display = "none";
+            const defaultMessageDiv = document.getElementById("defaultMessageDiv");
+            if (defaultMessageDiv) {
+                defaultMessageDiv.style.display = "none";
+            }
+
+            //  Clear any previous "no vocabulary" message
+            const divn = document.getElementById("divn");
+            if (divn) {
+                divn.innerHTML = "";
+            }
+
+
         });
 
         btndiv.appendChild(button);
