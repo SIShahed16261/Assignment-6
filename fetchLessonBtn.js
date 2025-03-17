@@ -105,7 +105,7 @@ function displayModalContent(data) {
             <p class="mt-8 mb-8 text-center font-bold text-lg">Press ESC or Close button to close the modal</p>
             <div class="modal-action">
                 <form method="dialog">
-                    <button class="btn btn-primary">Close</button>
+                    <button class="btn btn-primary">Complete learning</button>
                 </form>
             </div>
         </div>
