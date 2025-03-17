@@ -102,7 +102,7 @@ function displayModalContent(data) {
             <p class="mt-2 text-sm font-normal">${data.sentence}</p>
             <p class="mt-5 text-sm font-bold">সমার্থক শব্দ গুলো</p>
             <div class="mt-2">${data.synonyms.map(word => `<button class="btn mt-2 mr-2">${word}</button>`).join('')}</div>
-            <p class="mt-8 mb-8 text-center font-bold text-lg">Press ESC or Close button to close the modal</p>
+            <p class="mt-8 mb-8 text-center font-bold text-lg">Press Complete Learning button to close the modal</p>
             <div class="modal-action">
                 <form method="dialog">
                     <button class="btn btn-primary">Complete learning</button>
